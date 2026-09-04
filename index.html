@@ -66,7 +66,17 @@ function sync(t){
   }
   seek.value=t;current.textContent=formatTime(t);
 }
-function frame(){sync(audio.currentTime);if(!audio.paused)raf=requestAnimationFrame(frame)}
+function frame(){
+  if(audio.currentTime>=END){
+    audio.pause();
+    audio.currentTime=END;
+    sync(END-0.001);
+    status.textContent='Section complete.';
+    return;
+  }
+  sync(audio.currentTime);
+  if(!audio.paused)raf=requestAnimationFrame(frame)
+}
 async function playHindi(){try{if(audio.currentTime<START||audio.currentTime>=END)audio.currentTime=START;await audio.play();status.textContent='';cancelAnimationFrame(raf);raf=requestAnimationFrame(frame)}catch(e){status.textContent='Press Play Hindi Section to start.'}}
 play.onclick=()=>audio.paused?playHindi():audio.pause();
 restart.onclick=()=>{audio.currentTime=START;currentLine=-1;lastTime=-1;renderLine(-1);sync(START);playHindi()};
