@@ -9,7 +9,7 @@
 </style></head>
 <body><canvas id="canvas"></canvas><div class="glow"></div><div class="container"><div class="title">❤️ Teri Kalyani</div><div class="subtitle">Hindi Section • Word-by-Word Karaoke</div><div class="lyricBox"><div id="lyrics"></div></div><div class="controls"><button id="play" class="play">▶ Play Hindi Section</button><button id="restart" class="icon">↺</button><button id="mute" class="icon">🔊</button></div><div class="progress"><input id="seek" type="range" min="104" max="145" step="0.01" value="104"><div class="time"><span id="current">1:44</span><span>2:25</span></div></div><div id="status"></div></div><audio id="audio" src="song.mp3" preload="auto"></audio>
 <script>
-const START=104.00,END=150.00;
+const START=104.00,END=152.00;
 const lyrics=[
 [[104.10,"Kya"],[104.41,"fitoor"],[104.85,"door"],[105.32,"raha"],[105.78,"kyon"],[106.24,"jaaye"],[106.85,"na"]],
 [[108.23,"Ye"],[108.68,"kasoor"],[109.31,"noor"],[109.76,"ka"],[110.22,"tere"],[110.83,"hai"],[111.30,"saara"]],
@@ -19,7 +19,7 @@ const lyrics=[
 [[126.52,"Ho"],[126.83,"itni"],[127.45,"nazdeeki"],[128.05,"bechaini"],[128.82,"ye"],[130.19,"berahmi"],[130.77,"hai"]],
 [[131.81,"Ye"],[132.17,"rangat"],[132.73,"kaajal"],[133.35,"ki"],[133.65,"hai"],[133.95,"teri"],[134,"khaatir"],[136,"hi"]],
 [[137.10,"To"],[137.40,"daakhil"],[137.70,"dil"],[137.80,"mein"],[138,"ho"],[138.60,"main"],[138.93,"gayi"],[140.27,"teri"],[140.85,"kalyani"]],
-[[145.28,"Haan"],[145.30,"teri"],[145.50,"kalyani"],[148.75,"meri"],[148.80,"kalyani"]]
+[[145.28,"Haan"],[145.30,"teri"],[145.50,"kalyani"],[148.75,"meri"],[149.80,"kalyani"]]
 ];
 const audio=document.getElementById('audio'),play=document.getElementById('play'),restart=document.getElementById('restart'),mute=document.getElementById('mute'),lyricsBox=document.getElementById('lyrics'),seek=document.getElementById('seek'),current=document.getElementById('current'),status=document.getElementById('status');
 let currentLine=-1, raf=0, lastTime=-1;
